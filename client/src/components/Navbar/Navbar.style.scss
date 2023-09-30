@@ -2,11 +2,14 @@
 
 .navbar {
   display: flex;
+  position: sticky;
+  top: 0; /* Sticky position at the top of the viewport */
   justify-content: space-between;
   align-items: center;
   background-color: #333; /* Example background color */
   padding: 10px;
   color: #fff; /* Example text color */
+  z-index: 100; /* Adjust the z-index if necessary */
 }
 
 .navbar ul {
