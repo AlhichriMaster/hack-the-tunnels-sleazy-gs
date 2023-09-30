@@ -1,5 +1,53 @@
+/* Navbar.style.scss */
+
 .navbar {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Example background color */
+  padding: 10px;
+  color: #fff; /* Example text color */
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  margin-right: 10px;
+}
+
+/* Styles for the store logo */
+.store-logo {
+  width: 100px; /* Adjust the width to your desired size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: auto; /* Push it to the left */
+}
+
+/* Navbar.style.scss */
+
+/* Existing styles... */
+
+/* Style for the button-like links */
+.navbar a.button-like,
+.navbar button.button-like {
+  font-size: 18px;
+  padding: 10px 20px;
+  text-decoration: none; /* Remove underlines */
+  color: #fff; /* Change the text color to make it more visible */
+  background-color: #333; /* Change the background color for better contrast */
+  border: none;
+  border-radius: 5px; /* Add rounded corners for a button-like appearance */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect for button-like links (optional) */
+.navbar a.button-like:hover,
+.navbar button.button-like:hover {
+  background-color: #555; /* Change the background color on hover */
 }

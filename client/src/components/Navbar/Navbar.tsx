@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAccountContext } from "../../context";
@@ -9,27 +10,26 @@ function Navbar() {
 
   return (
     <div className="navbar">
+      {/* Store Logo on the left */}
+      <Link to="/">
+        <img
+          src="/storeLogo.jpg"
+          alt="Store Logo"
+          className="store-logo"
+        />
+      </Link>
+      
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">News</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">About</a></li>
-      </ul>
-
-
-      <div className="navbar__logo">
-        <Link to="/">Store Logo</Link>
-      </div>
-      <div className="navbar__account">
+        {/* Login, Sign Up, and Logout on the right */}
         {loggedIn() === false ? (
           <>
-            <button onClick={() => navigate("/sign-up")}>Sign Up</button>
-            <button onClick={() => navigate("/login")}>Login</button>
+            <li><Link to="/login" className="button-like">Login</Link></li>
+            <li><Link to="/sign-up" className="button-like">Sign Up</Link></li>
           </>
         ) : (
-          <button onClick={() => logout()}>Logout</button>
+          <li><button onClick={() => logout()} className="button-like">Logout</button></li>
         )}
-      </div>
+      </ul>
     </div>
   );
 }
