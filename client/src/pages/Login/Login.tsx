@@ -11,7 +11,10 @@ function Login() {
 
   const attemptLogin = async () => {
     try {
-      const message = await login("admin@email.com", "password");
+      const uName = document.getElementById('uName') as HTMLInputElement | null;
+      const password = document.getElementById('password') as HTMLInputElement | null;
+      const message = await login(uName.value, password.value);
+      // console.log(uName, password);
       setMessage(message);
     } catch (error) {
       console.log(error);
@@ -28,10 +31,18 @@ function Login() {
     <Page>
       <div className="login-page">
         <h1>Login</h1>
-        <button onClick={() => attemptLogin()}>
-          Login (as user set in code)
-        </button>
-        {message && <p>{message}</p>}
+        <form>
+          <label>Username:</label>
+          <input type="text" id="uName" name="uName"></input><br></br>
+
+          <label>Password:</label>
+          <input type="password" id="password" name="password"></input><br></br>
+
+          <button onClick={() => attemptLogin()}>
+            Login
+          </button>
+          {message && <p>{message}</p>}
+        </form>
       </div>
     </Page>
   );
