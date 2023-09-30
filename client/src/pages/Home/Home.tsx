@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Page, ProductPreviewCard } from "../../components";
 import { ServiceAPI } from "../../infrastructure";
@@ -24,13 +24,15 @@ function Home() {
         <div className="home-page__products">
           {products.map((product) => (
             <Link to={`/products/${product.id}`} key={`${product.id}`}>
-              <ProductPreviewCard
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                imageUrl={product.imageUrl}
-                key={`${product.id}`}
-              />
+              <div className="product-preview-card">
+                <ProductPreviewCard
+                  title={product.title}
+                  description={product.description}
+                  price={product.price}
+                  imageUrl={product.imageUrl}
+                  key={`${product.id}`}
+                />
+              </div>
             </Link>
           ))}
         </div>
